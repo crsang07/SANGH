@@ -43,7 +43,7 @@
   <div id="formulario-registro" class="registro-formulario" style="display: none;">
     <h2>Registro de Usuario</h2>
     
-    <!--  Solo una etiqueta <form> -->
+    <!--  formulario de registro <form> -->
     <form id="registro">
       <input type="text" name="nombre" id="nombre" placeholder="Nombre completo" required />
       <input type="email" name="email" id="email" placeholder="Correo electrónico" required />
@@ -73,9 +73,9 @@
     } else {
       alert(`¡Bienvenido, ${nombre}! Tu registro fue exitoso.`);
       
-      // Edito aquí para enviar a un servidor y podrías usar fetch o AJAX 
+      // Edito aquí para enviar a un servidor y podría usar fetch o AJAX 
       document.getElementById("registro").reset();
-      document.getElementById("formulario-registro").style.display = "none";
+      document.getElementById("formulario-registro").style.display = "none";     <!--cultar un elemento en la página web --> 
     }
   });
 </script>
@@ -112,7 +112,7 @@
     </div>
   
     <!-- Formulario de pago (oculto al inicio) -->
-<div id="formulario-pago" style="display: none; background-color: #f9f9f9; padding: 20px; border: 1px solid #ccc;">
+<div id="formulario-pago" style="display: none; background-color: #f9f9f9; padding: 20px; border: 1px solid #ccc;">   <!--  espacio interno de 20 píxeles alrededor del contenido del elemento, separándolo de sus bordes. -->
   <h2>Formulario de Pago</h2>
   <form id="pago-form">
     <input type="text" name="nombre" placeholder="Nombre completo" required><br><br>
@@ -127,7 +127,7 @@
 <script>
 document.getElementById("pagar-carrito").addEventListener("click", function(e) {
   e.preventDefault();
-  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];    <!-- Guarda los productos del carrito en el almacenamiento local del navegado --> 
 
   if (carrito.length === 0) {
     alert("El carrito está vacío. Agrega productos antes de pagar.");
@@ -140,14 +140,15 @@ document.getElementById("pagar-carrito").addEventListener("click", function(e) {
 document.getElementById("pago-form").addEventListener("submit", function(e) {
   e.preventDefault();
   alert("¡Gracias por tu compra! El pedido ha sido procesado.");
-  localStorage.removeItem("carrito"); // Vaciar carrito
+  localStorage.removeItem("carrito");    <!-- Vaciar carrito --> 
   document.getElementById("formulario-pago").style.display = "none";
-  location.reload(); // Recargar para actualizar vista del carrito
+  location.reload();     <!-- Recargar para actualizar vista del carrito-->
 });
 </script>
 
     
-  <div class="header-contentcontainer ">
+  <div class="header-contentcontainer ">     <!--agrupa todo el contenido del encabezado--> 
+
     <div class="header-img">
         <img src="right.jpg" alt="">
 
@@ -201,7 +202,7 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
   </div>
  </section>
   <!-- Modales -->
-<div id="modal-info1" class="modal">
+<div id="modal-info1" class="modal">     <!--ventana emergente --> 
   <div class="modal-contenido">
     <span class="cerrar">&times;</span>
     <p>Zapatillas deportivas Air Jordan High OG "Sky Blue", diseñadas para ofrecer estilo retro y soporte alto ideal tanto para deporte como uso urbano.</p>
@@ -237,14 +238,14 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
   </div>
 </div>
 <style>
-  .ofert-row {
+  .ofert-row {       <!--definir el diseño de una fila de ofertas, espacio entre ellos -->  
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
   }
 
-  .ofert-item {
+  .ofert-item {   <!--elmentos individuales -->
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -294,7 +295,8 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
   .modal {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 999;  <!--modal por encima de otros elementos -->  
+
     left: 0;
     top: 0;
     width: 100%;
@@ -306,7 +308,7 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
   .modal-contenido {
     background-color: white;
     margin: auto;
-    padding: 20px;
+    padding: 20px;   /* Agrega espacio interno */
     border-radius: 10px;
     width: 90%;
     max-width: 400px;
@@ -315,7 +317,7 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
     animation: aparecer 0.3s ease-out;
   }
 
-  @keyframes aparecer {
+  @keyframes aparecer {   <!--  elemento aparezca suavemente en la pantalla-->  
     from {opacity: 0; transform: translateY(20px);}
     to {opacity: 1; transform: translateY(0);}
   }
@@ -361,11 +363,12 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
 </script>
 
 
-   <main class="products container" id="lista-1">
+   <main class="products container" id="lista-1"> <!--contenedor principal donde se muestra los productos. -->   
+
     <h2>Productos</h2>
       <div class="product-content">
 
-          <div class="product">
+          <div class="product">  <!--agrupar productos  -->   
         <img src="1.jpg" alt="">
           <div class="producto-txt">
         <h3> Air Force 1 Shodow</h3>
@@ -488,11 +491,11 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
  
   </div>
 </section>
-            <footer class="footer" style="background-color: #000; color: white;">
+            <footer class="footer" style="background-color: #000; color: white;">  <!- estructura del pie de página -->    
   <div class="footer-content container" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 30px 0;">
     
     <!-- Información de la tienda -->
-    <div class="link" style="flex: 1;">
+    <div class="link" style="flex: 1;">  <!--  el elemento link ocupe todo el espacio disponible de manera proporcional.  --> 
       <h3>Sang Ha Shoes</h3>
       <ul style="list-style: none; padding: 0;">
         <li>Dirección: Calle Reforma 123, CDMX</li>
@@ -506,7 +509,7 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
     <!-- Mapa de Google -->
     <div class="link" style="flex: 1;">
       <h3>Ubicación</h3>
-      <iframe 
+      <iframe <!-- incrustar otra página web dentro de la actual  -->
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.7310972144055!2d-99.1738244!3d19.3890441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3bcffb1f0b%3A0x3fd3c57d3b9b03b6!2sCalle%20Reforma%20123%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1717171717171"
         width="100%" height="200" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
@@ -516,7 +519,7 @@ document.getElementById("pago-form").addEventListener("submit", function(e) {
     <!-- Redes sociales -->
     <div class="link" style="flex: 1;">
       <h3>Redes Sociales</h3>
-      <ul style="list-style: none; padding: 0;">
+      <ul style="list-style: none; padding: 0;">     <!--crear una lista sin viñetas ni espacios adicionales-->
         <ul>
     <li><a href="https://www.facebook.com/share/1AbufyxTBA/" style="color: white;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="20"> Facebook</a>
@@ -580,10 +583,10 @@ function detectarEnter(event) {
         <td>${producto.precio}</td>
         <td><a href="#" class="borrar" data-id="${producto.id}">X</a></td>
       `;
-      lista.appendChild(row);
+      lista.appendChild(row);      <!--agregar un nuevo elemento (row) como hijo-->
     });
   }
-
+      <!--Detecta clics en el carrito-->
   lista.addEventListener('click', (e) => {
     if (e.target.classList.contains('borrar')) {
       const id = e.target.dataset.id;
